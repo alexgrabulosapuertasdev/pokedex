@@ -1,9 +1,14 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { PokemonList } from './components/PokemonList/PokemonList';
 
 function App() {
   return (
-      <PokemonList />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<PokemonList />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
