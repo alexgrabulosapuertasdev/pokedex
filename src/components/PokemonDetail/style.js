@@ -5,7 +5,7 @@ export const styles = {
         flexDirection: 'column',
         fontWeight: 'bold',
         gap: '2rem',
-        margin: '0 auto',
+        margin: '1rem auto',
         textAlign: 'center',
         textTransform: 'uppercase',
         width: '80vw',
