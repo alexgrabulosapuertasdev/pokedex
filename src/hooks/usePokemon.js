@@ -19,6 +19,7 @@ export function usePokemons() {
 export function usePokemon() {
     const { id } = useParams();
     const [pokemon, setPokemon] = useState();
+    const [isShiny, setIsShiny] = useState(false);
 
     useEffect(() => {
         const idValid = id >= 1 && id <= 151;
@@ -28,7 +29,13 @@ export function usePokemon() {
         });
     }, [id]);
 
+    const activateShiny = () => { setIsShiny(true); };
+    const desactivateShiny = () => { setIsShiny(false); };
+
     return {
         pokemon,
+        isShiny,
+        activateShiny,
+        desactivateShiny,
     };
 }

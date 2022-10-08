@@ -3,16 +3,19 @@ import { styles } from './style';
 import { Bar } from '../Bar/Bar';
 import { COLOUR_BY_TYPE } from '../../constants/colourByType';
 import { usePokemon } from '../../hooks/usePokemon';
+import { InputSwitch } from '../InputSwitch/InputSwitch';
 
 export function PokemonDetail() {
-    const { pokemon } = usePokemon();
+    const { pokemon, isShiny, activateShiny, desactivateShiny } = usePokemon();
     const firstType = pokemon?.types[0].type.name.toUpperCase();
     const secondType = pokemon?.types[1]?.type.name.toUpperCase();
+    const avatar = pokemon?.sprites[`${isShiny ? 'front_shiny' : 'front_default'}`];
     
     return(
         <main style={styles.container}>
             <h1>{pokemon?.name}</h1>
-            <img style={styles.img} src={pokemon?.sprites.front_default} alt={pokemon?.name} />
+            <img style={styles.img} src={avatar} alt={pokemon?.name} />
+            <InputSwitch text={isShiny ? 'NORMAL VERSION' : 'SHINY VERSION'} activate={() => { isShiny ? desactivateShiny() : activateShiny() }} />
             <div style={styles.types}>
                 <span style={{...styles.type, background: COLOUR_BY_TYPE[firstType] }}>{firstType}</span>
                 {secondType && <span style={{...styles.type, background: COLOUR_BY_TYPE[secondType]}}>{secondType}</span>}
