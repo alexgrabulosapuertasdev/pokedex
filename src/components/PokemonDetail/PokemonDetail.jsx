@@ -27,7 +27,7 @@ export function PokemonDetail() {
                     ))
                 }
             </ul>
-            <Link style={styles.backBtn} to={'/'}>VOLVER A LA POKEDEX</Link>
+            <Link style={styles.backBtn} to={'/pokedex'}>VOLVER A LA POKEDEX</Link>
         </main>
     );
 }

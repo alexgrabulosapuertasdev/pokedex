@@ -10,7 +10,7 @@ export function PokemonCard({ pokemon }) {
     const background = `linear-gradient(to bottom right, ${COLOUR_BY_TYPE[firstType]} 50%, ${COLOUR_BY_TYPE[secondType ?? firstType]} 0)`;
 
     return(
-        <Link to={`/${id}`} style={styles.linkRoute}>
+        <Link to={`/pokemon/${id}`} style={styles.linkRoute}>
             <article style={{ ...styles.container,  background }}>
                 <h4 style={styles.title}>{id}. {name}</h4>
                 <img style={styles.img} loading="lazy" src={avatar} alt="" />
