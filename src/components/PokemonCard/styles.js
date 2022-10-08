@@ -1,9 +1,19 @@
 export const styles = {
+    linkRoute: {
+        textDecoration: 'none',
+    },
     container: {
+        alignItems: 'center',
         boxShadow: '0 0 5px #212121',
+        display: 'flex',
+        flexDirection: 'column',
         height: '220px',
+        justifyContent: 'space-evenly',
         textAlign: 'center',
         textTransform: 'uppercase',
+    },
+    title: {
+        margin: '0',
     },
     img: {
         background: '#FFFFFF',
@@ -16,5 +26,6 @@ export const styles = {
     types: {
         display: 'flex',
         justifyContent: 'space-evenly',
+        gap: '1rem'
     },
 };

@@ -9,7 +9,7 @@ export async function getPokemons() {
     return pokemons;
 }
 
-function getPokemonById(id) {
+export function getPokemonById(id) {
     return fetch(`${API_URL}/${id}`)
         .then(res => res.json());
 }
