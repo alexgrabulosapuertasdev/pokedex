@@ -13,7 +13,7 @@ export function PokemonCard({ pokemon }) {
         <Link to={`/pokemon/${id}`} style={styles.linkRoute}>
             <article style={{ ...styles.container,  background }}>
                 <h4 style={styles.title}>{id}. {name}</h4>
-                <img style={styles.img} loading="lazy" src={avatar} alt="" />
+                <img style={styles.img} loading="lazy" src={avatar} alt={name} />
                 <div style={styles.types}>
                     <span>{types[0].type.name}</span>
                     { types[1] && <span>{types[1].type.name}</span> }
