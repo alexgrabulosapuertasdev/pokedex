@@ -4,13 +4,12 @@ const MAX_VALUE = 255;
 
 export function Bar({ value }) {
 
-    const background = `hsl(${value}, 100%, 50%)`;
     const width = `${value * 100 / MAX_VALUE}%`;
+    const background = `linear-gradient(to right, hsl(${value}, 100%, 50%) ${width}, #575757 0)`;
 
     return (
-        <div style={styles.container}>
-            <span style={{...styles.zone, background, width }}></span>
-            <span style={styles.value}>{value}&nbsp;</span>
+        <div style={{ ...styles.container, background }}>
+            <span style={styles.value}>{value}</span>
         </div>
     );
 }
