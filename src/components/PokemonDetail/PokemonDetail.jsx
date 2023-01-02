@@ -4,15 +4,17 @@ import { Bar } from '../Bar/Bar';
 import { COLOUR_BY_TYPE } from '../../constants/colourByType';
 import { usePokemon } from '../../hooks/usePokemon';
 import { InputSwitch } from '../InputSwitch/InputSwitch';
+import { Loading } from '../Loading/Loading';
 
 export function PokemonDetail() {
-    const { pokemon, isShiny, activateShiny, desactivateShiny } = usePokemon();
+    const { activateShiny, desactivateShiny, loading, isShiny, pokemon } = usePokemon();
     const firstType = pokemon?.types[0].type.name.toUpperCase();
     const secondType = pokemon?.types[1]?.type.name.toUpperCase();
     const avatar = pokemon?.sprites[`${isShiny ? 'front_shiny' : 'front_default'}`];
     
     return(
         <main style={styles.container}>
+            { loading && <Loading /> }
             <h1>{pokemon?.name}</h1>
             <img style={styles.img} src={avatar} alt={pokemon?.name} />
             <InputSwitch text={isShiny ? 'NORMAL VERSION' : 'SHINY VERSION'} activate={() => { isShiny ? desactivateShiny() : activateShiny() }} />
